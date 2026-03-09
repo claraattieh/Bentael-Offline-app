@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bentael Guide | Draft 1</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img id="logo" src="/brand-assets/bentael_logo.png" alt="Bentael Nature Reserve logo" />
+        <div>
+          <h1>Bentael Guide</h1>
+          <p>Smart Offline Hiking Companion - Draft 1</p>
+        </div>
+      </div>
+      <div class="net-status">
+        <span id="connectionBadge">Checking network...</span>
+        <button id="syncBtn">Sync Pending</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card map-card">
+        <h2>Offline Navigation</h2>
+        <p class="subtext">
+          Map module placeholder. Trail overlays and route logic are active through backend data; visual map tiles will be connected when you send map resources.
+        </p>
+        <div class="map-placeholder">
+          <p>Map coming soon</p>
+          <small>Bentael center: 34.14034, 35.69357</small>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Trails</h2>
+        <div id="trailsGrid" class="grid"></div>
+      </section>
+
+      <section class="card two-col">
+        <div>
+          <h2>Landmarks</h2>
+          <ul id="landmarkList" class="list"></ul>
+        </div>
+        <div>
+          <h2>Wildlife</h2>
+          <ul id="wildlifeList" class="list"></ul>
+        </div>
+      </section>
+
+      <section class="card two-col">
+        <div>
+          <h2>Activity Tracker</h2>
+          <form id="activityForm" class="stack">
+            <input id="steps" type="number" placeholder="Steps" required />
+            <input id="calories" type="number" placeholder="Calories" required />
+            <input id="distanceKm" type="number" step="0.01" placeholder="Distance (km)" required />
+            <input id="elevationGainM" type="number" placeholder="Elevation gain (m)" required />
+            <button type="submit">Save Activity</button>
+          </form>
+        </div>
+        <div>
+          <h2>Trail Ratings & Reviews</h2>
+          <form id="reviewForm" class="stack">
+            <select id="reviewTrailId" required></select>
+            <input id="reviewRating" type="number" min="1" max="5" placeholder="Rating (1-5)" required />
+            <textarea id="reviewText" placeholder="Share feedback"></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+          <ul id="reviewsList" class="list compact"></ul>
+        </div>
+      </section>
+
+      <section class="card two-col">
+        <div>
+          <h2>Notes & Photo Logs</h2>
+          <form id="logForm" class="stack">
+            <select id="logType">
+              <option value="note">Note</option>
+              <option value="comment">Comment</option>
+              <option value="photo">Photo</option>
+            </select>
+            <textarea id="logText" placeholder="Write a note or comment"></textarea>
+            <input id="logPhotoUrl" placeholder="Photo URL (optional)" />
+            <button type="submit">Save Log</button>
+          </form>
+          <ul id="logsList" class="list compact"></ul>
+        </div>
+        <div>
+          <h2>Admin Visitor Snapshot</h2>
+          <button id="sendTrackBtn">Send Current Browser Location</button>
+          <ul id="adminList" class="list compact"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>LAU GNE345 - Bentael Guide working prototype</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

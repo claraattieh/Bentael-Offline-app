@@ -1,0 +1,29 @@
+name: bentael_hiker
+description: Offline-first hiking app for Bentael Nature Reserve.
+publish_to: "none"
+
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  geolocator: ^13.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/bentael_tracks.json
+    - assets/logo/bentael_logo.png
+    - assets/maps/bentael_official_trails_full.png
+    - assets/maps/bentael_official_trails_zoom.png
